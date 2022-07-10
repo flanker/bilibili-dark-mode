@@ -1,3 +1,7 @@
+---
+title: bilibili dark mode
+---
+
 # bilibili dark mode
 
 一个谷歌浏览器插件，可以让 bilibili.com 进入夜间模式。
