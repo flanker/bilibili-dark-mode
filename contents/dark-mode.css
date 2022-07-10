@@ -1,0 +1,19 @@
+/* Dark mode for all elements on all pages */
+html {
+  color-scheme: dark light;
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+/* Keep following element from dark mode */
+svg {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+img {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+/* Keep video player from dark mode */
+.bilibili-player-video-wrap {
+  filter: invert(1) hue-rotate(.5turn);
+}
