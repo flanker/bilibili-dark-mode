@@ -23,3 +23,8 @@ img {
 .van-framepreview {
   filter: invert(1) hue-rotate(.5turn);
 }
+
+/* Keep video player ending panel from dark mode */
+.bilibili-player-ending-panel {
+  filter: invert(1) hue-rotate(.5turn);
+}
