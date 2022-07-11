@@ -14,6 +14,12 @@ img {
 }
 
 /* Keep video player from dark mode */
-.bilibili-player-video-wrap {
+.bilibili-player-video-wrap,
+.v-inline-player {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+/* Keep video preview from dark mode */
+.van-framepreview {
   filter: invert(1) hue-rotate(.5turn);
 }
