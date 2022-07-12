@@ -16,7 +16,7 @@ export const getStyle = () => {
   return style
 }
 
-export const swithToggle = (darkBiliToggle: boolean) => {
+export const switchToggle = (darkBiliToggle: boolean) => {
   const htmlElement = document.getElementsByTagName('html')[0]
   if (darkBiliToggle) {
     htmlElement.classList.add("dark-bili");
@@ -27,15 +27,17 @@ export const swithToggle = (darkBiliToggle: boolean) => {
   console.log('Dark Mode swithed to ' + darkBiliToggle)
 }
 
-const storage = new Storage()
-const darkBiliToggleString = storage.get("darkBiliToggle").then((darkBiliToggleString) => {
-  const darkBiliToggle = !(darkBiliToggleString === "false")
-  swithToggle(darkBiliToggle)
+const storage = new Storage("local")
+const darkBiliToggleString = storage.get<boolean>("darkBiliToggle").then((darkBiliToggle) => {
+  if (typeof darkBiliToggle === "undefined") {
+    switchToggle(true)
+  } else {
+    switchToggle(darkBiliToggle)
+  }
 })
-
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    swithToggle(request.darkBiliToggle)
+    switchToggle(request.darkBiliToggle)
   }
 );

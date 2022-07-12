@@ -3,7 +3,7 @@ import { useStorage } from "@plasmohq/storage"
 
 function IndexPopup() {
   const [data, setData] = useState("")
-  let [darkBiliToggle, setDarkBiliToggle] = useStorage<boolean>("darkBiliToggle")
+  let [darkBiliToggle, setDarkBiliToggle] = useStorage<boolean>({key: "darkBiliToggle", area: "local"})
   if (typeof darkBiliToggle === "undefined") {
     darkBiliToggle = true
   }
