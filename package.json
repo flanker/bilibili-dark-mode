@@ -1,8 +1,8 @@
 {
   "name": "bilibili-dark-mode",
-  "displayName": "bilibili dark mode",
-  "version": "0.0.1",
-  "description": "Dark mode for bilibili.com",
+  "displayName": "DarkBili - Dark Mode for bilibili.com",
+  "version": "0.0.2",
+  "description": "Dark mode / night mode for bilibili.com",
   "author": "fzhichao",
   "scripts": {
     "dev": "plasmo dev",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "plasmo": "0.46.3",
+    "@plasmohq/storage": "0.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

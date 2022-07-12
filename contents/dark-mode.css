@@ -1,30 +1,30 @@
 /* Dark mode for all elements on all pages */
-html {
+html.dark-bili {
   color-scheme: dark light;
   filter: invert(1) hue-rotate(.5turn);
 }
 
 /* Keep following element from dark mode */
-svg {
+.dark-bili svg {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-img {
+.dark-bili img {
   filter: invert(1) hue-rotate(.5turn);
 }
 
 /* Keep video player from dark mode */
-.bilibili-player-video-wrap,
-.v-inline-player {
+.dark-bili .bilibili-player-video-wrap,
+.dark-bili .v-inline-player {
   filter: invert(1) hue-rotate(.5turn);
 }
 
 /* Keep video preview from dark mode */
-.van-framepreview {
+.dark-bili .van-framepreview {
   filter: invert(1) hue-rotate(.5turn);
 }
 
 /* Keep video player ending panel from dark mode */
-.bilibili-player-ending-panel {
+.dark-bili .bilibili-player-ending-panel {
   filter: invert(1) hue-rotate(.5turn);
 }
