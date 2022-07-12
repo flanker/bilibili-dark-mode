@@ -16,6 +16,11 @@ function IndexPopup() {
     })
   }
 
+  const linkClicked = function() {
+    chrome.tabs.create({url: "https://flanker.github.io/bilibili-dark-mode"});
+    return false;
+  }
+
   return (
     <div
       style={{
@@ -35,6 +40,15 @@ function IndexPopup() {
           />
           <span>Dark Mode</span>
         </label>
+      </div>
+      <div>
+        <p>
+          <a href={"https://flanker.github.io/bilibili-dark-mode"}
+            onClick={(e) => linkClicked()}
+          >
+            网站
+          </a>
+        </p>
       </div>
     </div>
   )
