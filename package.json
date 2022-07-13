@@ -12,7 +12,8 @@
     "plasmo": "0.46.3",
     "@plasmohq/storage": "0.7.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "antd": "4.21.6"
   },
   "devDependencies": {
     "@plasmohq/prettier-plugin-sort-imports": "1.1.1",

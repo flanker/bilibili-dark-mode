@@ -1,5 +1,10 @@
 import { useState } from "react"
 import { useStorage } from "@plasmohq/storage"
+import { Button, Card, Divider, Space, Switch, Typography } from 'antd'
+
+const { Text, Title } = Typography;
+
+import "./index.css"
 
 function IndexPopup() {
   const [data, setData] = useState("")
@@ -16,9 +21,12 @@ function IndexPopup() {
     })
   }
 
-  const linkClicked = function() {
+  const websiteClicked = function() {
     chrome.tabs.create({url: "https://flanker.github.io/bilibili-dark-mode"});
-    return false;
+  }
+
+  const githubClicked = function() {
+    chrome.tabs.create({url: "https://github.com/flanker/bilibili-dark-mode"});
   }
 
   return (
@@ -27,29 +35,33 @@ function IndexPopup() {
         minWidth: "180px",
         padding: 16
       }}>
-      <div>
-        <strong>DarkBili</strong>
-      </div>
-      <hr />
-      <div>
-        <label>
-          <input
-            type={"checkbox"}
-            checked={darkBiliToggle}
-            onChange={(e) => toggleChecked(e.target.checked)}
-          />
-          <span>Dark Mode</span>
-        </label>
-      </div>
-      <div>
-        <p>
-          <a href={"https://flanker.github.io/bilibili-dark-mode"}
-            onClick={(e) => linkClicked()}
-          >
-            网站
-          </a>
-        </p>
-      </div>
+      <Title style={{ fontSize: 24 }}>DarkBili</Title>
+      <Text>bilibili.com 夜间模式</Text>
+      <Space direction="vertical" size="middle">
+        <Card title="设置" size="small" style={{ width: 220 }}>
+          <label>
+            <Space>
+              <Switch
+                checked={darkBiliToggle}
+                onChange={(checked) => toggleChecked(checked)}
+              />
+              <span>夜间模式</span>
+            </Space>
+          </label>
+        </Card>
+      </Space>
+      <Space direction="vertical" size="middle">
+        <Card title="插件信息" size="small" style={{ width: 220 }}>
+          <Space>
+            <Button onClick={websiteClicked}>
+              访问网站
+            </Button>
+            <Button onClick={githubClicked}>
+              Github
+            </Button>
+          </Space>
+        </Card>
+      </Space>
     </div>
   )
 }
