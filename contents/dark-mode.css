@@ -1,10 +1,17 @@
+/*
+  OC: keep original color
+  DC: use dark color
+*/
+
+/* --- global --- */
+
 /* Dark mode for all elements on all pages */
 html.dark-bili {
   color-scheme: dark light;
   filter: invert(1) hue-rotate(.5turn);
 }
 
-/* Keep following element from dark mode */
+/* OC: Images should use original color */
 .dark-bili svg {
   filter: invert(1) hue-rotate(.5turn);
 }
@@ -13,18 +20,64 @@ html.dark-bili {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-/* Keep video player from dark mode */
-.dark-bili .bilibili-player-video-wrap,
-.dark-bili .v-inline-player {
+/* --- video detail page --- */
+
+/* OC: Video player */
+.dark-bili .bilibili-player-video-wrap {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-/* Keep video preview from dark mode */
+/* OC: Video preview */
 .dark-bili .van-framepreview {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-/* Keep video player ending panel from dark mode */
+/* OC: Video player ending panel */
 .dark-bili .bilibili-player-ending-panel {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+/* --- home page --- */
+
+/* OC: Inline video player */
+.dark-bili .v-inline-player,
+.dark-bili .bili-video-card__mask {
+  filter: invert(1) hue-rotate(.5turn);
+}
+/* OC: Inline live video player */
+.dark-bili .v-inline-live-player {
+  filter: invert(1) hue-rotate(.5turn);
+}
+/* OC: Inline video player stats icon */
+.dark-bili .bili-video-card__mask svg {
+  filter: unset;
+}
+/* DC: svg in header navigation */
+.dark-bili .bili-header .bili-header__bar svg {
+  filter: unset;
+}
+
+/* --- space page --- */
+
+/* OC: header */
+.dark-bili #app.visitor .h .h-inner {
+  filter: invert(1) hue-rotate(.5turn);
+}
+/* OC: avatar in header */
+.dark-bili #app.visitor .h .h-inner .bili-avatar-img {
+  filter: unset;
+}
+/* OC: preview video */
+.dark-bili #app.visitor .preview-bg {
+  filter: invert(1) hue-rotate(.5turn);
+}
+.dark-bili #app.visitor .fake-danmu {
+  filter: invert(1) hue-rotate(.5turn);
+}
+
+/* --- live page --- */
+
+/* OC: live player */
+.live-room-app .player-section {
   filter: invert(1) hue-rotate(.5turn);
 }
