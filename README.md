@@ -6,7 +6,9 @@ A Chrome extension to turn your bilibili.com into dark mode.
 
 ## 截图
 
-![Screenshot](images/screenshot.jpeg)
+![Screenshot](images/screely-1657723133931.png)
+
+![Screenshot](images/screely-1657723657334.png)
 
 ## Development
 
