@@ -5,26 +5,27 @@ html.dark-bili {
 }
 
 /* 图片、视频、带有背景图的原色，保持原有颜色（再次翻转） */
-.dark-bili svg {
-  filter: invert(1) hue-rotate(.5turn);
-}
-
-.dark-bili img {
-  filter: invert(1) hue-rotate(.5turn);
-}
-
-.dark-bili video {
-  filter: invert(1) hue-rotate(.5turn);
-}
-
-[style*='background:url'],
-[style*='background-image:url'],
-[style*='background: url'],
-[style*='background-image: url'] {
+.dark-bili img,
+.dark-bili svg,
+.dark-bili [style*='background:url'],
+.dark-bili [style*='background-image:url'],
+.dark-bili [style*='background: url'],
+.dark-bili [style*='background-image: url'],
+.dark-bili video,
+.dark-bili bwp-video {
   filter: invert(1) hue-rotate(.5turn);
 }
 
 /* 以 icon 结尾的 svg，一般用于修饰文字的图表，不进行再次翻转（保持暗黑） */
 .dark-bili svg[class$='icon'] {
   filter: unset;
+}
+
+/* Video Player Page: 弹幕：保持原色 */
+.dark-bili .bilibili-player-video-danmaku {
+  filter: invert(1) hue-rotate(.5turn);
+}
+/* Video Player Page: 播放器的按钮图标：保持原色 */
+.dark-bili .bilibili-player-video-wrap svg {
+  filter: unset;;
 }
