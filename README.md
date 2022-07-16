@@ -4,11 +4,19 @@
 
 A Chrome extension to turn your bilibili.com into dark mode.
 
+## 安装地址
+
+[谷歌浏览器 Chrome Web Store](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
+
 ## 截图
 
-![Screenshot](images/screely-1657723133931.png)
+<img src="images/screely-1657723133931.png" alt="Screenshot" width="60%" />
 
-![Screenshot](images/screely-1657723657334.png)
+<img src="images/screely-1657723657334.png" alt="Screenshot" width="60%" />
+
+## 提交反馈
+
+[https://github.com/flanker/bilibili-dark-mode/issues/new](https://github.com/flanker/bilibili-dark-mode/issues/new)
 
 ## Development
 
