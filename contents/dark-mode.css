@@ -29,3 +29,9 @@ html.dark-bili {
 .dark-bili .bilibili-player-video-wrap svg {
   filter: unset;;
 }
+
+/* 视频页面在 fullscreen 下，需要先做颜色反转 */
+:fullscreen {
+  color-scheme: dark light;
+  filter: invert(1) hue-rotate(.5turn);
+}
