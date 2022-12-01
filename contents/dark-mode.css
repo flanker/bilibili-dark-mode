@@ -4,6 +4,12 @@ html.dark-bili {
   filter: invert(1) hue-rotate(.5turn);
 }
 
+/* 与 B站自己的 Gray 灰色模式兼容 */
+html.gray.dark-bili {
+  color-scheme: dark light;
+  filter: invert(1) hue-rotate(.5turn) grayscale(.95);
+}
+
 /* 图片、视频、带有背景图的原色，保持原有颜色（再次翻转） */
 .dark-bili img,
 .dark-bili svg,
