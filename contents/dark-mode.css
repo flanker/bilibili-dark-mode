@@ -27,13 +27,21 @@ html.gray.dark-bili {
   filter: unset;
 }
 
-/* Video Player Page: 弹幕：保持原色 */
-.dark-bili .bilibili-player-video-danmaku {
+/* Video Player Page: 反转播放器：保持原色 */
+.dark-bili .bpx-player-video-area {
   filter: invert(1) hue-rotate(.5turn);
 }
-/* Video Player Page: 播放器的按钮图标：保持原色 */
-.dark-bili .bilibili-player-video-wrap svg {
-  filter: unset;;
+
+/* Video Player Page: 播放器中的图片、视频等，不需要再次反转 */
+.dark-bili .bpx-player-video-area img,
+.dark-bili .bpx-player-video-area svg,
+.dark-bili .bpx-player-video-area [style*='background:url'],
+.dark-bili .bpx-player-video-area [style*='background-image:url'],
+.dark-bili .bpx-player-video-area [style*='background: url'],
+.dark-bili .bpx-player-video-area [style*='background-image: url'],
+.dark-bili .bpx-player-video-area video,
+.dark-bili .bpx-player-video-area bwp-video {
+  filter: unset;
 }
 
 /* 视频页面在 fullscreen 下，需要先做颜色反转 */
