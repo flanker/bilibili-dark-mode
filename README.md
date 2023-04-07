@@ -6,9 +6,9 @@ A Chrome/Edge extension to turn your bilibili.com into dark mode.
 
 ## 安装地址
 
-[DarkBili - Dark Mode for bilibili.com - 谷歌浏览器 Chrome Web Store](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
+[DarkBili - Dark Mode for bilibili.com - 谷歌浏览器 Chrome Web Store](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba?utm_source=github&utm_medium=web&utm_campaign=homepage)
 
-[DarkBili - Dark Mode for bilibili.com - Edge 浏览器 Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi)
+[DarkBili - Dark Mode for bilibili.com - Edge 浏览器 Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi?utm_source=github&utm_medium=web&utm_campaign=homepage)
 
 ## 截图
 
