@@ -46,19 +46,19 @@ html.dark-bili {
 
 /*
   https://github.com/flanker/bilibili-dark-mode/issues/2
-  剧集播放页面的评论文字，B站未设置颜色，导致无法反转。
+  剧集播放页面、文章页面的评论文字，B站未设置颜色，导致无法反转。
   Adhoc 给这里先加上默认文字颜色。
 */
 .bb-comment .comment-list .list-item .text,
 .bb-comment .comment-list .list-item .user .text-con {
-  color: var(--text1);
+  color: #18191C;
 }
 
 /*
   https://github.com/flanker/bilibili-dark-mode/issues/7
-  B 站历史记录页面的搜索框没有适配夜间模式
+  历史记录页面的搜索框没有适配夜间模式。
 */
 input {
   background-color: transparent;
-  color: var(--text2);
+  color: #18191C;
 }
