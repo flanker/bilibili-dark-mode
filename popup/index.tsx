@@ -37,7 +37,10 @@ function IndexPopup() {
         <Card title="设置" size="small" style={{ width: 220 }}>
           <label>
             <Space>
-              <Switch checked={darkBiliToggle} onChange={(checked) => toggleChecked(checked)} />
+              <Switch
+                checked={typeof darkBiliToggle === 'undefined' || darkBiliToggle}
+                onChange={(checked) => toggleChecked(checked)}
+              />
               <span>夜间模式</span>
             </Space>
           </label>
