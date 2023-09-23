@@ -53,3 +53,12 @@ html.dark-bili {
 .bb-comment .comment-list .list-item .user .text-con {
   color: var(--text1);
 }
+
+/*
+  https://github.com/flanker/bilibili-dark-mode/issues/7
+  B 站历史记录页面的搜索框没有适配夜间模式
+*/
+input {
+  background-color: transparent;
+  color: var(--text2);
+}
