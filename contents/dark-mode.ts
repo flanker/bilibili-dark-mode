@@ -1,7 +1,7 @@
-import type { PlasmoContentScript } from "plasmo"
+import type { PlasmoCSConfig } from "plasmo"
 import { Storage } from "@plasmohq/storage"
 
-export const config: PlasmoContentScript = {
+export const config: PlasmoCSConfig = {
   matches: [
     "https://*.bilibili.com/*"
   ],
@@ -27,7 +27,7 @@ export const switchToggle = (darkBiliToggle: boolean) => {
   console.log('Dark Mode swithed to ' + darkBiliToggle)
 }
 
-const storage = new Storage("local")
+const storage = new Storage()
 const darkBiliToggleString = storage.get<boolean>("darkBiliToggle").then((darkBiliToggle) => {
   if (typeof darkBiliToggle === "undefined") {
     switchToggle(true)

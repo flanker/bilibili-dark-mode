@@ -1,17 +1,12 @@
-import { useState } from "react"
-import { useStorage } from "@plasmohq/storage"
-import { Button, Card, Divider, Space, Switch, Typography } from 'antd'
+import { useStorage } from "@plasmohq/storage/hook"
+import { Button, Card, Space, Switch, Typography } from 'antd'
 
 const { Text, Title } = Typography;
 
 import "./index.css"
 
 function IndexPopup() {
-  const [data, setData] = useState("")
-  let [darkBiliToggle, setDarkBiliToggle] = useStorage<boolean>({key: "darkBiliToggle", area: "local"})
-  if (typeof darkBiliToggle === "undefined") {
-    darkBiliToggle = true
-  }
+  const [darkBiliToggle, setDarkBiliToggle] = useStorage<boolean>("darkBiliToggle")
 
   const toggleChecked = function(darkBiliToggle: boolean) {
     setDarkBiliToggle(darkBiliToggle)
@@ -32,7 +27,7 @@ function IndexPopup() {
   return (
     <div
       style={{
-        minWidth: "180px",
+        minWidth: "260px",
         padding: 16
       }}>
       <Title style={{ fontSize: 24 }}>DarkBili</Title>
