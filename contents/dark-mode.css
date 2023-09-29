@@ -16,8 +16,11 @@ html.dark-bili {
   filter: invert(1) hue-rotate(.5turn);
 }
 
-/* 以 icon 结尾的 svg，一般用于修饰文字的图表，不进行再次翻转（保持暗黑） */
+/* 以 icon 开头和结尾的 svg，一般用于修饰文字的图表，不进行再次翻转（保持暗黑） */
 .dark-bili svg[class$='icon'] {
+  filter: unset;
+}
+.dark-bili svg[class^='icon'] {
   filter: unset;
 }
 
@@ -34,8 +37,15 @@ html.dark-bili {
 .dark-bili .bpx-player-video-area [style*='background: url'],
 .dark-bili .bpx-player-video-area [style*='background-image: url'],
 .dark-bili .bpx-player-video-area video,
-.dark-bili .bpx-player-video-area bwp-video {
+.dark-bili .bpx-player-video-area bwp-video,
+.dark-bili .horizontal-ratio-item-inner .season-cover-views svg /* 番剧页面，视频卡片上统计信息的 icon */ {
   filter: unset;
+}
+
+.dark-bili .bili-video-card__stats, /* 首页：视频卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
+.dark-bili .bili-live-card__stats, /* 首页：直播卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
+.dark-bili .bili-dyn-card-video__cover-shadow /* 动态详情页面：视频卡片的 stat 信息不需要反转*/ {
+  filter: invert(0.85) hue-rotate(.5turn);
 }
 
 /* 视频页面在 fullscreen 下，需要先做颜色反转 */
