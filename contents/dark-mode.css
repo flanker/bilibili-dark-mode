@@ -1,7 +1,11 @@
+:root {
+  --primary-invert-amount: 0.98;
+}
+
 /* 所有元素，颜色翻转（暗黑） */
 html.dark-bili {
   color-scheme: dark light;
-  filter: invert(1) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
 
 /* 图片、视频、带有背景图的原色，保持原有颜色（再次翻转） */
@@ -13,7 +17,7 @@ html.dark-bili {
 .dark-bili [style*='background-image: url'],
 .dark-bili video,
 .dark-bili bwp-video {
-  filter: invert(1) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
 
 /* 以 icon 开头和结尾的 svg，一般用于修饰文字的图表，不进行再次翻转（保持暗黑） */
@@ -26,7 +30,7 @@ html.dark-bili {
 
 /* Video Player Page: 反转播放器：保持原色 */
 .dark-bili .bpx-player-video-area {
-  filter: invert(1) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
 
 /* Video Player Page: 播放器中的图片、视频等，不需要再次反转 */
@@ -51,7 +55,7 @@ html.dark-bili {
 /* 视频页面在 fullscreen 下，需要先做颜色反转 */
 .dark-bili :fullscreen {
   color-scheme: dark light;
-  filter: invert(1) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
 
 /*
