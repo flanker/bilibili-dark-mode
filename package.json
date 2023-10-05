@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@plasmohq/storage": "1.8.0",
-    "antd": "5.9.2",
+    "antd": "5.9.4",
     "plasmo": "0.83.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -18,11 +18,11 @@
   "devDependencies": {
     "@plasmohq/prettier-plugin-sort-imports": "4.0.1",
     "@types/chrome": "0.0.246",
-    "@types/node": "20.6.3",
-    "@types/react": "18.2.22",
-    "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
+    "@types/node": "20.8.2",
+    "@types/react": "18.2.25",
+    "@types/react-dom": "18.2.10",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
     "eslint": "^8.50.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
