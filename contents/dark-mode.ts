@@ -14,15 +14,21 @@ export const getStyle = () => {
   return style
 }
 
+const isSkippedPage = () => {
+  const pagesAlreadyInDark = ['/movie/', '/tv/', '/documentary/', '/variety/']
+  const currentPath = window.location.pathname
+  return pagesAlreadyInDark.includes(currentPath)
+}
+
 export const switchToggle = (darkBiliToggle: boolean) => {
   const htmlElement = document.getElementsByTagName('html')[0]
-  if (darkBiliToggle) {
+  if (darkBiliToggle && !isSkippedPage()) {
     htmlElement.classList.add('dark-bili')
   } else {
     htmlElement.classList.remove('dark-bili')
   }
 
-  console.log('Dark Mode swithed to ' + darkBiliToggle)
+  console.log('Dark Mode switched to ' + darkBiliToggle)
 }
 
 const storage = new Storage()
