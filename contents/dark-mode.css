@@ -76,3 +76,11 @@ html.dark-bili:not([lab-style='dark']) {
   background-color: transparent;
   color: #18191C;
 }
+
+/* 评论区留言中的图片，预览时已经是深色背景，所以需要先做一次颜色反转，同时保留图片颜色不变 */
+.dark-bili:not([lab-style='dark']) .reply-view-image {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+}
+.dark-bili:not([lab-style='dark']) .reply-view-image img {
+  filter: unset;
+}
