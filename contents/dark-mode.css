@@ -20,6 +20,18 @@ html.dark-bili:not([lab-style='dark']) {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
 
+/* 已经在有背景图片的情况下，图片不需要再次反转了 */
+.dark-bili:not([lab-style='dark']) [style*='background:url'] img,
+.dark-bili:not([lab-style='dark']) [style*='background-image:url'] img,
+.dark-bili:not([lab-style='dark']) [style*='background: url'] img,
+.dark-bili:not([lab-style='dark']) [style*='background-image: url'] img,
+.dark-bili:not([lab-style='dark']) [style*='background:url'] svg,
+.dark-bili:not([lab-style='dark']) [style*='background-image:url'] svg,
+.dark-bili:not([lab-style='dark']) [style*='background: url'] svg,
+.dark-bili:not([lab-style='dark']) [style*='background-image: url'] svg {
+  filter: unset;
+}
+
 /* 以 icon 开头和结尾的 svg，一般用于修饰文字的图表，不进行再次翻转（保持暗黑） */
 .dark-bili:not([lab-style='dark']) svg[class$='icon'] {
   filter: unset;
