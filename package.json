@@ -1,7 +1,7 @@
 {
   "name": "bilibili-dark-mode",
   "displayName": "DarkBili - Dark Mode for bilibili.com",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Dark mode / night mode for bilibili.com",
   "author": "fzhichao",
   "scripts": {
