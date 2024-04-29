@@ -3,16 +3,20 @@ import { useStorage } from '@plasmohq/storage/hook'
 
 import '@radix-ui/themes/styles.css'
 import './index.css'
-import { Container, Text, Flex, Heading, Switch, Theme, Link, Card } from '@radix-ui/themes'
+import { Container, Text, Flex, Heading, SegmentedControl, Theme, Link, Card } from '@radix-ui/themes'
 
 function IndexPopup() {
-  const [darkBiliToggle, setDarkBiliToggle] = useStorage<boolean>('darkBiliToggle')
+  // for legacy config
+  const [darkBiliToggle] = useStorage<boolean>('darkBiliToggle')
 
-  const toggleChecked = function (darkBiliToggle: boolean) {
-    setDarkBiliToggle(darkBiliToggle)
+  // new config
+  const [darkBiliMode, setDarkBiliMode] = useStorage<string>('darkBiliMode')
+
+  const modeChanged = function (mode: string) {
+    setDarkBiliMode(mode)
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { darkBiliToggle: darkBiliToggle })
+      chrome.tabs.sendMessage(tabs[0].id, { darkBiliMode: mode })
     })
   }
 
@@ -43,12 +47,16 @@ function IndexPopup() {
           <Flex my="2" justify="center">
             <Text as="label" size="2" align="center">
               <Flex align="center" gap="2">
-                开启 Dark Mode:{' '}
-                <Switch
+                <SegmentedControl.Root
                   size="1"
-                  checked={typeof darkBiliToggle === 'undefined' || darkBiliToggle}
-                  onCheckedChange={(checked) => toggleChecked(checked)}
-                />
+                  value={
+                    darkBiliMode || (typeof darkBiliToggle === 'undefined' ? 'dark' : darkBiliToggle ? 'dark' : 'light')
+                  }
+                  onValueChange={(value) => modeChanged(value)}>
+                  <SegmentedControl.Item value="dark">暗色</SegmentedControl.Item>
+                  <SegmentedControl.Item value="light">亮色</SegmentedControl.Item>
+                  <SegmentedControl.Item value="system">跟随系统</SegmentedControl.Item>
+                </SegmentedControl.Root>
               </Flex>
             </Text>
           </Flex>

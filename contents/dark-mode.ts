@@ -14,12 +14,14 @@ export const getStyle = () => {
   return style
 }
 
+// following pages are already in dark mode
 const isSkippedPage = () => {
   const pagesAlreadyInDark = ['/movie/', '/tv/', '/documentary/', '/variety/']
   const currentPath = window.location.pathname
   return pagesAlreadyInDark.includes(currentPath)
 }
 
+// actually switch dark toggle (dark/light)
 export const switchToggle = (darkBiliToggle: boolean) => {
   const htmlElement = document.getElementsByTagName('html')[0]
   if (darkBiliToggle && !isSkippedPage()) {
@@ -28,18 +30,50 @@ export const switchToggle = (darkBiliToggle: boolean) => {
     htmlElement.classList.remove('dark-bili')
   }
 
-  console.log('Dark Mode switched to ' + darkBiliToggle)
+  console.log('Dark Toggle switched to ' + darkBiliToggle)
 }
 
-const storage = new Storage()
-storage.get<boolean>('darkBiliToggle').then((darkBiliToggle) => {
-  if (typeof darkBiliToggle === 'undefined') {
+// switch dark mode (dark/light/system)
+export const switchMode = (darkBiliMode: string) => {
+  console.log('Dark Mode is ' + darkBiliMode)
+
+  if (darkBiliMode === 'dark') {
     switchToggle(true)
+  } else if (darkBiliMode === 'light') {
+    switchToggle(false)
   } else {
-    switchToggle(darkBiliToggle)
+    const isDarkMode = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    switchToggle(isDarkMode())
   }
+}
+
+// load or reload dark mode
+const loadDarkMode = () => {
+  const storage = new Storage()
+  storage.get<string>('darkBiliMode').then((darkBiliMode) => {
+    if (typeof darkBiliMode === 'undefined') {
+      storage.get<boolean>('darkBiliToggle').then((darkBiliToggle) => {
+        if (typeof darkBiliToggle === 'undefined') {
+          switchMode('dark')
+        } else {
+          switchMode(darkBiliToggle ? 'dark' : 'light')
+        }
+      })
+    } else {
+      switchMode(darkBiliMode)
+    }
+  })
+}
+
+// init dark mode
+loadDarkMode()
+
+// when popup changes the mode
+chrome.runtime.onMessage.addListener(function (request) {
+  switchMode(request.darkBiliMode)
 })
 
-chrome.runtime.onMessage.addListener(function (request) {
-  switchToggle(request.darkBiliToggle)
+// when system dark mode changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  loadDarkMode()
 })
