@@ -90,8 +90,10 @@ html.dark-bili:not([lab-style='dark']):not(.theme-dark):not([data-match-theme='d
 /*
   https://github.com/flanker/bilibili-dark-mode/issues/7
   历史记录页面的搜索框没有适配夜间模式。
+  个人主页公告编辑区域
 */
-.dark-bili:not([lab-style='dark']):not(.theme-dark):not([data-match-theme='dark']) input {
+.dark-bili:not([lab-style='dark']):not(.theme-dark):not([data-match-theme='dark']) input,
+.dark-bili:not([lab-style='dark']):not(.theme-dark):not([data-match-theme='dark']) textarea {
   background-color: transparent;
   color: #18191C;
 }
