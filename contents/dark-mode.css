@@ -35,7 +35,11 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background:url'] svg,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] svg,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background: url'] svg,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] svg {
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] svg,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] > [style*='background-image:url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] > [style*='background-image: url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] > [style*='background-image:url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] > [style*='background-image: url'] {
   filter: unset;
 }
 
