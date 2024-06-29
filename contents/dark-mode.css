@@ -109,3 +109,8 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .reply-view-image img {
   filter: unset;
 }
+
+/* blackboard 页面，使用 iframe 嵌入的播放器，反转播放器：保持原色 */
+iframe#video-frame {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+}
