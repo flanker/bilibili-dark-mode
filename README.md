@@ -24,6 +24,12 @@ https://github.com/flanker/bilibili-dark-mode
 
 [https://github.com/flanker/bilibili-dark-mode/issues/new](https://github.com/flanker/bilibili-dark-mode/issues/new)
 
+## Buy me a coffee
+
+If you like it, why not buy me a coffee? :)
+
+[https://buymeacoffee.com/fengzhichao](https://buymeacoffee.com/fengzhichao)
+
 ## Development
 
 This is a [Plasmo extension](https://docs.plasmo.com/) project.
