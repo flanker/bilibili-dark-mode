@@ -114,3 +114,18 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 iframe {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
+
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-ending-panel {
+  background-color: #FFF !important;
+}
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .live-player-mounter {
+  background-color: #FFF !important;
+}
+/* 直播页面：直播视频菜单栏 */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+}
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap svg,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap img {
+  filter: unset;
+}
