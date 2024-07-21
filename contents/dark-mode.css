@@ -137,7 +137,8 @@ iframe {
   --text1: #FFF;
   --graph_bg_thick: #333;
   --graph_bg_thin: #010101;
-  --bg3: #333;
+  --bg1: #18191C;
+  --bg3: #2F3238;    /* 评论区背景色 */
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-photoswipe {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
