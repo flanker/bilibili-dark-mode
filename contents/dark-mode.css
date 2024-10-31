@@ -114,6 +114,9 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 iframe {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
 }
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) :fullscreen iframe {
+  filter: unset;
+}
 
 /* 直播页面：b站部分元素已经是黑色，需要重置下 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-ending-panel {
@@ -132,13 +135,18 @@ iframe {
 }
 
 /* 评论区：B站评论区使用了 ShadowRoot，只能通过 css var 来控制了 */
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) #comment bili-comments {
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-comments {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
   --text1: #FFF;
   --graph_bg_thick: #333;
   --graph_bg_thin: #010101;
   --bg1: #18191C;
   --bg3: #2F3238;    /* 评论区背景色 */
+}
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-user-profile {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  --text1: #FFF;
+  --bg1_float: #2F3238;
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-photoswipe {
   filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
