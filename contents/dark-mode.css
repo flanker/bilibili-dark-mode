@@ -11,8 +11,8 @@
 
 /* 所有元素，颜色翻转（暗黑） */
 html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) {
-  color-scheme: dark light;
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  color-scheme: dark;
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 
 /* 图片、视频、带有背景图的原色，保持原有颜色（再次翻转） */
