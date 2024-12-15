@@ -24,22 +24,34 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'],
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) video,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bwp-video {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 
 /* 已经在有背景图片的情况下，图片不需要再次反转了 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background:url'] img,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] img,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background: url'] img,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] img,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image: url']
+  img,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background:url'] svg,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] svg,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background: url'] svg,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] svg,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] > [style*='background-image:url'],
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image:url'] > [style*='background-image: url'],
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] > [style*='background-image:url'],
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) [style*='background-image: url'] > [style*='background-image: url'] {
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image: url']
+  svg,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image:url']
+  > [style*='background-image:url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image:url']
+  > [style*='background-image: url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image: url']
+  > [style*='background-image:url'],
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  [style*='background-image: url']
+  > [style*='background-image: url'] {
   filter: unset;
 }
 
@@ -53,7 +65,7 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 
 /* Video Player Page: 反转播放器：保持原色 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bpx-player-video-area {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 
 /* Video Player Page: 播放器中的图片、视频等，不需要再次反转 */
@@ -72,13 +84,13 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-video-card__stats, /* 首页：视频卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-live-card__stats, /* 首页：直播卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-dyn-card-video__cover-shadow /* 动态详情页面：视频卡片的 stat 信息不需要反转*/ {
-  filter: invert(0.85) hue-rotate(.5turn);
+  filter: invert(0.85) hue-rotate(0.5turn);
 }
 
 /* 视频页面在 fullscreen 下，需要先做颜色反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) :fullscreen {
   color-scheme: dark light;
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 
 /*
@@ -86,9 +98,18 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
   剧集播放页面、文章页面的评论文字，B站未设置颜色，导致无法反转。
   Adhoc 给这里先加上默认文字颜色。
 */
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bb-comment .comment-list .list-item .text,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bb-comment .comment-list .list-item .user .text-con {
-  color: #18191C;
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .bb-comment
+  .comment-list
+  .list-item
+  .text,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .bb-comment
+  .comment-list
+  .list-item
+  .user
+  .text-con {
+  color: #18191c;
 }
 
 /*
@@ -99,12 +120,12 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) input,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) textarea {
   background-color: transparent;
-  color: #18191C;
+  color: #18191c;
 }
 
 /* 评论区留言中的图片，预览时已经是深色背景，所以需要先做一次颜色反转，同时保留图片颜色不变 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .reply-view-image {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .reply-view-image img {
   filter: unset;
@@ -112,42 +133,54 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 
 /* blackboard 页面，使用 iframe 嵌入的播放器，反转播放器：保持原色 */
 iframe {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) :fullscreen iframe {
   filter: unset;
 }
 
 /* 直播页面：b站部分元素已经是黑色，需要重置下 */
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-ending-panel {
-  background-color: #FFF !important;
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .web-player-ending-panel {
+  background-color: #fff !important;
 }
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .live-player-mounter {
-  background-color: #FFF !important;
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .live-player-mounter {
+  background-color: #fff !important;
 }
 /* 直播页面：直播视频菜单栏 */
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .web-player-controller-wrap {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap svg,
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .live-room-app .web-player-controller-wrap img {
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .web-player-controller-wrap
+  svg,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .web-player-controller-wrap
+  img {
   filter: unset;
 }
 
 /* 评论区：B站评论区使用了 ShadowRoot，只能通过 css var 来控制了 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-comments {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
-  --text1: #FFF;
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
+  --text1: #fff;
   --graph_bg_thick: #333;
   --graph_bg_thin: #010101;
-  --bg1: #18191C;
-  --bg3: #2F3238;    /* 评论区背景色 */
+  --bg1: #18191c;
+  --bg3: #2f3238; /* 评论区背景色 */
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-user-profile {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
-  --text1: #FFF;
-  --bg1_float: #2F3238;
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
+  --text1: #fff;
+  --bg1_float: #2f3238;
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-photoswipe {
-  filter: invert(var(--primary-invert-amount)) hue-rotate(.5turn);
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
