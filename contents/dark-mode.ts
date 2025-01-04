@@ -21,11 +21,20 @@ const isSkippedPage = () => {
   return pagesAlreadyInDark.includes(currentPath)
 }
 
+const isBlackboardPage = () => {
+  const currentPath = window.location.pathname
+  return currentPath.includes('/blackboard/')
+}
+
 // actually switch dark toggle (dark/light)
 export const switchToggle = (darkBiliToggle: boolean) => {
   const htmlElement = document.getElementsByTagName('html')[0]
   if (darkBiliToggle && !isSkippedPage()) {
     htmlElement.classList.add('dark-bili')
+
+    if (isBlackboardPage()) {
+      htmlElement.classList.add('dark-bili-blackboard')
+    }
   } else {
     htmlElement.classList.remove('dark-bili')
   }
