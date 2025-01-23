@@ -178,6 +178,7 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
   --graph_bg_thin: #010101;
   --bg1: #18191c;
   --bg3: #2f3238; /* 评论区背景色 */
+  --brand_blue_thin: #333; /* 从收到的赞进入视频后自己消息的高亮 */
 }
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bili-user-profile {
   filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
