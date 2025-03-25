@@ -203,3 +203,8 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .pswp img {
   filter: unset;
 }
+
+/* 个人空间：处理.h-inner (https://github.com/flanker/bilibili-dark-mode/issues/28) */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .h-inner {
+  filter: unset;
+}
