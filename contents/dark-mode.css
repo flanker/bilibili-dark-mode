@@ -82,9 +82,11 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 }
 
 /* Video Player Page: 播放器右键菜单需要暗黑 */
-.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bpx-player-context-area {
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bpx-player-context-area,
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bpx-player-dm-setting-wrap {
   filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
+
 
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-video-card__stats, /* 首页：视频卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-live-card__stats, /* 首页：直播卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
