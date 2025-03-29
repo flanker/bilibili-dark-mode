@@ -1,22 +1,14 @@
 # DarkBili - Dark Mode for bilibili.com
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kpjklikhldpeiibfhadeogaaeenhffba?color=4285f4&label=Chrome&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
-[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-v0.3.7-blue?logo=microsoft-edge)](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi)
-[![License](https://img.shields.io/github/license/flanker/bilibili-dark-mode)](LICENSE)
+![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/kpjklikhldpeiibfhadeogaaeenhffba)
+![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/rating/kpjklikhldpeiibfhadeogaaeenhffba)
 
 一个浏览器插件，可以让 bilibili.com 进入夜间模式。
 
 ## 🌐 官方网站
 
 [https://darkbili.com/](https://darkbili.com/)
-
-## 📥 安装方式
-
-### Chrome 浏览器
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kpjklikhldpeiibfhadeogaaeenhffba?color=4285f4&label=Chrome&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
-
-### Edge 浏览器
-[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-v0.3.7-blue?logo=microsoft-edge)](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi)
 
 ## 📸 效果展示
 
@@ -27,18 +19,21 @@
 这是一个基于 [Plasmo extension](https://docs.plasmo.com/) 的项目。
 
 ### 环境要求
+
 - Node.js >= 16
 - pnpm (推荐) 或 npm
 
 ### 开发步骤
 
 1. 克隆项目
+
 ```bash
 git clone https://github.com/flanker/bilibili-dark-mode.git
 cd bilibili-dark-mode
 ```
 
 2. 安装依赖
+
 ```bash
 pnpm install
 # 或
@@ -46,6 +41,7 @@ npm install
 ```
 
 3. 启动开发服务器
+
 ```bash
 pnpm dev
 # 或
@@ -53,6 +49,7 @@ npm run dev
 ```
 
 4. 在浏览器中加载开发版本
+
 - Chrome: 加载 `build/chrome-mv3-dev` 目录
 - Edge: 加载 `build/chrome-mv3-dev` 目录
 
@@ -70,7 +67,7 @@ npm run dev
 
 ## 📝 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+本项目采用 MIT 许可证
 
 ## 💝 支持项目
 
