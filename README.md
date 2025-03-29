@@ -1,47 +1,84 @@
 # DarkBili - Dark Mode for bilibili.com
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kpjklikhldpeiibfhadeogaaeenhffba?color=4285f4&label=Chrome&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
+[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-v0.3.7-blue?logo=microsoft-edge)](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi)
+[![License](https://img.shields.io/github/license/flanker/bilibili-dark-mode)](LICENSE)
+
 一个浏览器插件，可以让 bilibili.com 进入夜间模式。
 
-A Chrome/Edge extension to turn your bilibili.com into dark mode.
+## 🌐 官方网站
 
-## GitHub 地址
+[https://darkbili.com/](https://darkbili.com/)
 
-https://github.com/flanker/bilibili-dark-mode
+## 📥 安装方式
 
-## 安装地址
+### Chrome 浏览器
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kpjklikhldpeiibfhadeogaaeenhffba?color=4285f4&label=Chrome&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba)
 
-[DarkBili - Dark Mode for bilibili.com - 谷歌浏览器 Chrome Web Store](https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba?utm_source=github&utm_medium=web&utm_campaign=homepage)
+### Edge 浏览器
+[![Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-v0.3.7-blue?logo=microsoft-edge)](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi)
 
-[DarkBili - Dark Mode for bilibili.com - Edge 浏览器 Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi?utm_source=github&utm_medium=web&utm_campaign=homepage)
+## 📸 效果展示
 
-## 截图
+<img src="https://darkbili.com/framely-1743213812389.png" alt="DarkBili Screenshot" width="100%" />
 
-<img src="images/screely-1657723133931.png" alt="Screenshot" width="60%" />
+## 🛠️ 开发指南
 
-<img src="images/screely-1657723657334.png" alt="Screenshot" width="60%" />
+这是一个基于 [Plasmo extension](https://docs.plasmo.com/) 的项目。
 
-## 提交反馈
+### 环境要求
+- Node.js >= 16
+- pnpm (推荐) 或 npm
 
-[https://github.com/flanker/bilibili-dark-mode/issues/new](https://github.com/flanker/bilibili-dark-mode/issues/new)
+### 开发步骤
 
-## Buy me a coffee
+1. 克隆项目
+```bash
+git clone https://github.com/flanker/bilibili-dark-mode.git
+cd bilibili-dark-mode
+```
 
-If you like it, why not buy me a coffee? :)
+2. 安装依赖
+```bash
+pnpm install
+# 或
+npm install
+```
 
-[https://buymeacoffee.com/fengzhichao](https://buymeacoffee.com/fengzhichao)
-
-## Development
-
-This is a [Plasmo extension](https://docs.plasmo.com/) project.
-
-First, run the development server:
-
+3. 启动开发服务器
 ```bash
 pnpm dev
-# or
+# 或
 npm run dev
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+4. 在浏览器中加载开发版本
+- Chrome: 加载 `build/chrome-mv3-dev` 目录
+- Edge: 加载 `build/chrome-mv3-dev` 目录
 
-For further guidance, [visit Plasmo Documentation](https://docs.plasmo.com/)
+更多开发指南请参考 [Plasmo Documentation](https://docs.plasmo.com/)
+
+## 🤝 贡献指南
+
+欢迎提交 Issue 和 Pull Request！
+
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的改动 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启一个 Pull Request
+
+## 📝 许可证
+
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+
+## 💝 支持项目
+
+如果这个项目对你有帮助，欢迎请开发者喝杯咖啡！
+
+<a target="_blank" href="https://jform.co/f/Ah3ZWx">请开发者喝杯咖啡</a>
+
+## 📮 联系我们
+
+- 提交 Issue: [GitHub Issues](https://github.com/flanker/bilibili-dark-mode/issues/new)
+- 官方网站: [https://darkbili.com/](https://darkbili.com/)
