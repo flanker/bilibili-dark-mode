@@ -6,7 +6,8 @@
   "author": "fzhichao",
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build"
+    "build": "plasmo build --zip",
+    "build:firefox": "plasmo build --zip --target=firefox-mv3"
   },
   "dependencies": {
     "@plasmohq/storage": "^1.13.0",
@@ -32,6 +33,11 @@
   "manifest": {
     "host_permissions": [
       "https://*.bilibili.com/*"
-    ]
+    ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "bilibili-dark-mode@fengzhichao.me"
+      }
+    }
   }
 }
