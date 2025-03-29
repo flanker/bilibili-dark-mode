@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DarkBili - B站暗色模式</title>
+    <style>
+      :root {
+        --primary-color: #00a1d6;
+        --primary-hover: #0091c2;
+        --text-color: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        --bg-color: #0f0f0f;
+        --secondary-bg: #1a1a1a;
+        --card-bg: #1a1a1a;
+        --card-border: #2a2a2a;
+        --card-shadow: rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: var(--secondary-bg);
+        color: var(--text-color);
+        padding: 60px 0;
+        text-align: center;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        color: var(--text-secondary);
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .features {
+        padding: 80px 0;
+        background-color: var(--bg-color);
+      }
+
+      .features h2,
+      .screenshots h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--text-color);
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+      }
+
+      .feature-card {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid var(--card-border);
+        transition: transform 0.2s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .feature-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        color: var(--text-secondary);
+      }
+
+      .screenshots {
+        padding: 80px 0;
+        background-color: var(--secondary-bg);
+      }
+
+      .screenshots-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .screenshot {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--card-border);
+        transition: transform 0.2s ease;
+      }
+
+      .screenshot:hover {
+        transform: translateY(-4px);
+      }
+
+      footer {
+        background-color: var(--bg-color);
+        padding: 40px 0;
+        text-align: center;
+        border-top: 1px solid var(--card-border);
+      }
+
+      footer p {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.2s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--primary-hover);
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .features h2,
+        .screenshots h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="hero">
+          <h1>DarkBili</h1>
+          <p>为 bilibili.com 提供优雅的暗色模式体验</p>
+          <div class="cta-buttons">
+            <a
+              href="https://chrome.google.com/webstore/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba"
+              class="btn"
+              >Chrome 商店安装</a
+            >
+            <a
+              href="https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi"
+              class="btn"
+              >Edge 商店安装</a
+            >
+            <a
+              href="#"
+              class="btn"
+              style="opacity: 0.6; cursor: not-allowed; pointer-events: none;"
+              >Firefox 商店安装</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="features">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px">主要特点</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>一键切换</h3>
+            <p>通过浏览器扩展栏即可快速切换暗色模式，无需刷新页面</p>
+          </div>
+          <div class="feature-card">
+            <h3>精心设计</h3>
+            <p>经过精心调校的配色方案，确保长时间浏览不会疲劳</p>
+          </div>
+          <div class="feature-card">
+            <h3>全面支持</h3>
+            <p>支持 bilibili.com 所有主要页面，包括视频页、个人中心等</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px">效果展示</h2>
+        <div class="screenshots-grid">
+          <img src="./framely-1743213812389.png" alt="暗色模式效果" class="screenshot" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>如果你喜欢这个插件，欢迎给我们一些反馈或支持</p>
+        <div class="social-links">
+          <a target="_blank" href="https://github.com/flanker/bilibili-dark-mode">GitHub</a>
+          <a target="_blank" href="https://github.com/flanker/bilibili-dark-mode/issues/new">提交反馈</a>
+          <a target="_blank" href="https://jform.co/f/Ah3ZWx">请开发者喝杯咖啡</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
