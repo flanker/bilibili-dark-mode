@@ -8,7 +8,7 @@
 
 ## 🌐 官方网站
 
-[https://darkbili.com/](https://darkbili.com/)
+[https://darkbili.com/](https://darkbili.com/?utm_source=github&utm_medium=readme)
 
 ## 📸 效果展示
 
@@ -78,4 +78,4 @@ npm run dev
 ## 📮 联系我们
 
 - 提交 Issue: [GitHub Issues](https://github.com/flanker/bilibili-dark-mode/issues/new)
-- 官方网站: [https://darkbili.com/](https://darkbili.com/)
+- 官方网站: [https://darkbili.com/](https://darkbili.com/?utm_source=github&utm_medium=readme)
