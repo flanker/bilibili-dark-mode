@@ -87,7 +87,6 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
   filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
 
-
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-video-card__stats, /* 首页：视频卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-live-card__stats, /* 首页：直播卡片上的播放量、弹幕数、时长，保留原色，不需要反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .bili-dyn-card-video__cover-shadow /* 动态详情页面：视频卡片的 stat 信息不需要反转*/ {
@@ -207,4 +206,9 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 /* 个人空间：处理.h-inner (https://github.com/flanker/bilibili-dark-mode/issues/28) */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .h-inner {
   filter: unset;
+}
+
+/* 消息中心：背景图片 (https://github.com/flanker/bilibili-dark-mode/issues/37) */
+html.dark-bili .message-bg {
+  filter: brightness(80%) saturate(90%) contrast(110%) !important;
 }
