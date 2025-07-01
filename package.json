@@ -10,16 +10,16 @@
     "build:firefox": "plasmo build --zip --target=firefox-mv3"
   },
   "dependencies": {
-    "@plasmohq/storage": "^1.13.0",
-    "@radix-ui/themes": "^3.1.6",
-    "plasmo": "^0.89.4",
+    "@plasmohq/storage": "^1.15.0",
+    "@radix-ui/themes": "^3.2.1",
+    "plasmo": "^0.89.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@plasmohq/prettier-plugin-sort-imports": "^4.0.1",
-    "@types/chrome": "^0.0.253",
-    "@types/node": "^20.17.10",
+    "@types/chrome": "^0.0.328",
+    "@types/node": "^24.0.8",
     "@types/react": "^18.3.16",
     "@types/react-dom": "^18.3.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -27,8 +27,8 @@
     "eslint": "^8.57.1",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.2"
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
   },
   "manifest": {
     "host_permissions": [
