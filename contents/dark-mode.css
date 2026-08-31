@@ -212,3 +212,8 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
 html.dark-bili .message-bg {
   filter: brightness(80%) saturate(90%) contrast(110%) !important;
 }
+
+/* 直播页面：bwp-video 内部嵌套 video 时，避免二次反转 */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bwp-video video {
+  filter: unset;
+}
