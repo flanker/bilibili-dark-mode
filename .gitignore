@@ -39,7 +39,8 @@ dist/
 keys.json
 
 # typescript
-.tsbuildinfo
+*.tsbuildinfo
 
 # IDE
 .idea
+.vscode
