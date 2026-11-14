@@ -8,9 +8,11 @@ DarkBili is a browser extension that provides dark mode for bilibili.com. Built 
 
 ## Development Commands
 
-- `pnpm dev` or `npm run dev` - Start development server (creates `build/chrome-mv3-dev` directory)
-- `pnpm build` or `npm run build` - Build production version with zip
-- `pnpm build:firefox` or `npm run build:firefox` - Build Firefox version with zip
+Use pnpm (the only lockfile is `pnpm-lock.yaml`; CI installs with `--frozen-lockfile`).
+
+- `pnpm dev` - Start development server (creates `build/chrome-mv3-dev` directory)
+- `pnpm build` - Build production version with zip
+- `pnpm build:firefox` - Build Firefox version with zip
 
 ## Architecture
 

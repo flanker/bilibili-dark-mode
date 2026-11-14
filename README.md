@@ -20,8 +20,8 @@
 
 ### 环境要求
 
-- Node.js >= 16
-- pnpm (推荐) 或 npm
+- Node.js >= 20
+- pnpm
 
 ### 开发步骤
 
@@ -36,16 +36,12 @@ cd bilibili-dark-mode
 
 ```bash
 pnpm install
-# 或
-npm install
 ```
 
 3. 启动开发服务器
 
 ```bash
 pnpm dev
-# 或
-npm run dev
 ```
 
 4. 在浏览器中加载开发版本

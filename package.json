@@ -4,6 +4,7 @@
   "version": "0.3.8",
   "description": "Dark mode / night mode for bilibili.com",
   "author": "fzhichao",
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build --zip",
