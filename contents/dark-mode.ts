@@ -142,19 +142,42 @@ function handleProfileBackground(): void {
   }
 }
 
+/*
+  Live room skins: the skin background images are added by a stylesheet (not inline styles),
+  and these areas are designed to be dark. Mark the areas that actually have a skin so that
+  dark-mode.css keeps their original colors; rooms without a skin are not affected.
+*/
+const LIVE_SKIN_AREAS =
+  '.live-room-app .live-skin-coloration-area, .live-room-app #gift-control-vm, .live-room-app #chat-control-panel-vm';
+const KEEP_ORIGINAL_CLASS = 'dark-bili-keep';
+
+function markLiveSkinAreas(): void {
+  if (window.location.hostname !== 'live.bilibili.com') return;
+  document.querySelectorAll<HTMLElement>(LIVE_SKIN_AREAS).forEach((el) => {
+    const hasSkin = window.getComputedStyle(el).backgroundImage.includes('url(');
+    el.classList.toggle(KEEP_ORIGINAL_CLASS, hasSkin);
+  });
+}
+
+function handleDomChange(): void {
+  handleProfileBackground();
+  markLiveSkinAreas();
+}
+
 // Use debounce for DOM changes
-const debouncedHandleProfileBackground = debounce(handleProfileBackground, DEBOUNCE_DELAY);
+const debouncedHandleDomChange = debounce(handleDomChange, DEBOUNCE_DELAY);
 
 // Initialize observer
 function initObserver(): void {
   // Execute after page load
-  document.addEventListener('DOMContentLoaded', handleProfileBackground);
+  document.addEventListener('DOMContentLoaded', handleDomChange);
+  window.addEventListener('load', handleDomChange);
 
   // Watch DOM changes for dynamic content loading
   const observer: MutationObserver = new MutationObserver((mutations: MutationRecord[]) => {
     for (const mutation of mutations) {
       if (mutation.addedNodes.length) {
-        debouncedHandleProfileBackground();
+        debouncedHandleDomChange();
         break;
       }
     }

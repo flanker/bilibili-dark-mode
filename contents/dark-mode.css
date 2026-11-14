@@ -42,16 +42,16 @@ html.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='
   svg,
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
   [style*='background-image:url']
-  > [style*='background-image:url'],
+  [style*='background-image:url'],
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
   [style*='background-image:url']
-  > [style*='background-image: url'],
+  [style*='background-image: url'],
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
   [style*='background-image: url']
-  > [style*='background-image:url'],
+  [style*='background-image:url'],
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
   [style*='background-image: url']
-  > [style*='background-image: url'] {
+  [style*='background-image: url'] {
   filter: unset;
 }
 
@@ -216,4 +216,85 @@ html.dark-bili .message-bg {
 /* 直播页面：bwp-video 内部嵌套 video 时，避免二次反转 */
 .dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) bwp-video video {
   filter: unset;
+}
+
+/*
+  B站自己设计成深色/主题色的区域：再反转一次，保持原样（和播放器的处理方式一样），
+  区域内的图片、视频、svg、背景图取消掉多出来的那次反转。
+  用 :where() 让这组选择器不增加优先级，方便下面的例外规则覆盖。
+*/
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  :where(
+    /* 首页：轮播图（标题栏原本是深色） */
+    .recommended-swipe .carousel-container,
+    /* 活动视频页 /festival/：主题色区域（行内设置了背景色） */
+    #videoToolbar[style*='background'],
+    .video-staffs[style*='background'],
+    .video-sections[style*='background'],
+    .recommend-list[style*='background'],
+    /* 直播间：多人连麦 / PK 区域 */
+    .live-room-app .chat-room-container,
+    /* 直播间：皮肤区域（由 content script 检测到皮肤背景图后添加） */
+    .dark-bili-keep,
+    /* 漫画站：深色横幅、分类栏、页脚、推荐卡片 */
+    .index-banner.bg-black,
+    div[class*='bg-[#212121]'],
+    #recommendation .content-container,
+    /* 个人中心：顶部横幅、每日奖励 / 账号安全 / 等级图标 */
+    .top-header:has(> .top-img),
+    .home-dialy-exp-icon,
+    .h-safe-icon,
+    .home-top-level-head
+  ) {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
+}
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  :where(
+    .recommended-swipe .carousel-container,
+    #videoToolbar[style*='background'],
+    .video-staffs[style*='background'],
+    .video-sections[style*='background'],
+    .recommend-list[style*='background'],
+    .live-room-app .chat-room-container,
+    .dark-bili-keep,
+    .index-banner.bg-black,
+    div[class*='bg-[#212121]'],
+    #recommendation .content-container
+  )
+  :is(
+    img,
+    svg,
+    video,
+    bwp-video,
+    [style*='background:url'],
+    [style*='background-image:url'],
+    [style*='background: url'],
+    [style*='background-image: url']
+  ) {
+  filter: unset;
+}
+/* 首页轮播图：广告拦截提示占位是浅色，仍然保持暗色 */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .recommended-swipe
+  .carousel-container
+  .extension-tips-v2 {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
+}
+/* 直播间皮肤：聊天输入框原本是白色，仍然保持暗色 */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark']) .dark-bili-keep .chat-input-ctnr {
+  filter: invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
+}
+/* 直播间连麦背景图原本是模糊的 */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  .live-room-app
+  .chat-room-container
+  .blur-bg {
+  filter: blur(15px);
+}
+
+/* 动态页 (#30)：整页背景插画保持原色但调暗（先调暗再反转，被 html 的反转抵消后就是调暗的原图） */
+.dark-bili:not([lab-style*='dark']):not(.theme-dark):not([data-match-theme='dark'])
+  #app
+  > .bg[style*='background-image'] {
+  filter: brightness(0.35) invert(var(--primary-invert-amount)) hue-rotate(0.5turn);
 }
