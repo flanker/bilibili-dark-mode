@@ -9,9 +9,22 @@ type Mode = 'dark' | 'light' | 'system'
 
 const LINKS = {
   github: 'https://github.com/flanker/bilibili-dark-mode',
-  review: 'https://chromewebstore.google.com/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba',
   website: 'https://darkbili.com',
   coffee: 'https://zhichao.jsjform.com/f/Ah3ZWx'
+}
+
+const STORE_LINKS = {
+  chrome: 'https://chromewebstore.google.com/detail/darkbili-dark-mode-for-bi/kpjklikhldpeiibfhadeogaaeenhffba',
+  edge: 'https://microsoftedge.microsoft.com/addons/detail/darkbili-dark-mode-for-/nbabimeobioggknlhdndgigjndphjmbi',
+  firefox: 'https://addons.mozilla.org/zh-CN/firefox/addon/darkbili/'
+}
+
+// review in the store the extension was installed from
+const reviewLink = () => {
+  const ua = navigator.userAgent
+  if (ua.includes('Firefox/')) return STORE_LINKS.firefox
+  if (ua.includes('Edg/')) return STORE_LINKS.edge
+  return STORE_LINKS.chrome
 }
 
 const openTab = (url: string) => chrome.tabs.create({ url })
@@ -195,7 +208,7 @@ function IndexPopup() {
           <GithubIcon />
           代码
         </button>
-        <button type="button" className="link" onClick={() => openTab(LINKS.review)}>
+        <button type="button" className="link" onClick={() => openTab(reviewLink())}>
           <StarIcon />
           评价
         </button>
