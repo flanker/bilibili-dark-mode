@@ -69,7 +69,7 @@ pnpm dev
 
 如果这个项目对你有帮助，欢迎请开发者喝杯咖啡！
 
-<a target="_blank" href="https://jform.co/f/Ah3ZWx">请开发者喝杯咖啡</a>
+<a target="_blank" href="https://zhichao.jsjform.com/f/Ah3ZWx">请开发者喝杯咖啡</a>
 
 ## 📮 联系我们
 
