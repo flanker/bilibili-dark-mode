@@ -18,7 +18,7 @@ Use pnpm (the only lockfile is `pnpm-lock.yaml`; CI installs with `--frozen-lock
 
 ### Core Components
 - **Content Script (`contents/dark-mode.ts`)** - Main logic for dark mode switching and DOM manipulation
-- **Popup (`popup/index.tsx`)** - Extension popup UI built with React and Radix UI
+- **Popup (`popup/index.tsx`)** - Extension popup UI built with React and plain CSS (`popup/index.css`)
 - **CSS (`contents/dark-mode.css`)** - Comprehensive CSS inversion rules for dark mode
 
 ### Dark Mode Implementation
