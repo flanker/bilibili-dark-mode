@@ -17,8 +17,13 @@ export const getStyle = () => {
 // following pages are already in dark mode
 const isSkippedPage = () => {
   const pagesAlreadyInDark = ['/movie/', '/tv/', '/documentary/', '/variety/']
+  // Toy 广场 (/btoy/...) and Toy pages (/toy/<slug>/...): designed dark, and the toy itself is creator content
+  const sectionsAlreadyInDark = ['/btoy/', '/toy/']
   const currentPath = window.location.pathname
-  return pagesAlreadyInDark.includes(currentPath)
+  return (
+    pagesAlreadyInDark.includes(currentPath) ||
+    sectionsAlreadyInDark.some((prefix) => currentPath.startsWith(prefix))
+  )
 }
 
 const isBlackboardPage = () => {
