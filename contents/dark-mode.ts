@@ -33,7 +33,9 @@ const isBlackboardPage = () => {
 
 // actually switch dark toggle (dark/light)
 export const switchToggle = (darkBiliToggle: boolean) => {
-  const htmlElement = document.getElementsByTagName('html')[0]
+  const htmlElement = document.documentElement
+  if (!htmlElement) return
+
   if (darkBiliToggle && !isSkippedPage()) {
     htmlElement.classList.add('dark-bili')
 
@@ -47,9 +49,36 @@ export const switchToggle = (darkBiliToggle: boolean) => {
   console.log('Dark Toggle switched to ' + darkBiliToggle)
 }
 
+/*
+  #22: chrome.storage is async, so waiting for it lets the page paint white first.
+  The last applied mode is cached in the page's localStorage (per bilibili subdomain)
+  so it can be applied synchronously at document_start.
+*/
+const MODE_CACHE_KEY = 'dark-bili-mode'
+
+const readCachedMode = (): string | null => {
+  try {
+    return window.localStorage.getItem(MODE_CACHE_KEY)
+  } catch {
+    return null // localStorage can be blocked (sandboxed iframes, site data disabled)
+  }
+}
+
+const cacheMode = (darkBiliMode: string) => {
+  try {
+    window.localStorage.setItem(MODE_CACHE_KEY, darkBiliMode)
+  } catch {
+    // the cache only avoids the flash; the stored setting still applies
+  }
+}
+
 // switch dark mode (dark/light/system)
 export const switchMode = (darkBiliMode: string) => {
   console.log('Dark Mode is ' + darkBiliMode)
+
+  if (typeof darkBiliMode === 'string') {
+    cacheMode(darkBiliMode)
+  }
 
   if (darkBiliMode === 'dark') {
     switchToggle(true)
@@ -204,11 +233,13 @@ function initObserver(): void {
   }
 }
 
+// init dark mode: apply the cached mode right away (dark by default, same as an unset setting),
+// then load the stored setting to correct it
+switchMode(readCachedMode() ?? 'dark')
+loadDarkMode()
+
 // Initialize
 initObserver();
-
-// init dark mode
-loadDarkMode()
 
 // when popup changes the mode
 chrome.runtime.onMessage.addListener(function (request) {
